@@ -1,0 +1,37 @@
+def frequencyOfWords(sentence):
+    wordStore = {}
+    words = sentence.split()
+
+    for i in words:
+        wordStore[i] = wordStore.get(i, 0) + 1
+
+    return wordStore
+
+def file_processing(input_file_path, output_file_path):
+    with open(input_file_path, 'r') as infile, open(output_file_path, 'w') as outfile:
+
+        sentences = ' '.join(line.strip() for line in infile)
+
+        wordStore = frequencyOfWords(sentences)
+
+        outfile.write( sentences + "\n" + "\n")
+        outfile.write("Word_count:" + "\n" + "\n")
+
+        for word, count in wordStore.items():
+            outfile.write(f"{word}: {count}" + "\n")
+
+        outfile.write("\n")
+
+with open('input.txt', 'w') as f:
+    f.write('Python Course' + "\n" + "Deep Learning Course")
+
+file_processing('input.txt', 'output.txt')
+
+import os
+
+with open('output.txt', 'r') as f:
+    print(f.read())
+
+from google.colab import files
+files.download('input.txt')
+files.download('output.txt')
