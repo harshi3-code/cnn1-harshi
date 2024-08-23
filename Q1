@@ -1,0 +1,15 @@
+def fullname(firstname, lastname):
+  return firstname+" "+ lastname
+def string_alternative(full_name):
+    return full_name[::2]
+def main():
+    firstname = input("First_name = ")
+    lastname = input("Last_name = ")
+    print("Full_name =",fullname(firstname, lastname)) 
+    Str = fullname(firstname, lastname)
+    output = string_alternative(Str)
+    print(output)
+if __name__ == "__main__":
+    main()
+
+
