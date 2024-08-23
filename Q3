@@ -1,0 +1,16 @@
+def convert_heights_nested(heights_inches):
+    heights_cm = []
+    for height in heights_inches:
+        height_cm = height * 2.54
+        heights_cm.append(round(height_cm, 2))
+    return heights_cm
+
+heights_inches = [150, 155, 145, 148]
+heights_cm = convert_heights_nested(heights_inches)
+print(heights_cm)
+def convert_heights_to_cm_list_comp(heights_inches):
+    return [height * 2.54 for height in heights_inches]
+
+L1 = [150, 155, 145, 148]
+heights_cm_list_comp = convert_heights_to_cm_list_comp(L1)
+print(heights_cm_list_comp)
